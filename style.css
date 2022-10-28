@@ -22,7 +22,7 @@ h2 {
 }
 
 table {
-    font-family: Garamond, serif;;
+    font-family: Garamond, serif;
     border-collapse: collapse;
     width: 500px;
 }
@@ -33,7 +33,7 @@ table {
     box-sizing: border-box;
     text-indent: initial;
     border-spacing: 2px;
-    border-color: grey;
+    border-color: mediumorchid;
 }
 
 tbody {
@@ -53,5 +53,5 @@ tr {
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: lavender;
 }
