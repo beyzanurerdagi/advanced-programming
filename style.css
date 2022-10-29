@@ -19,12 +19,16 @@ h2 {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     font-weight: bold;
+    text-align: center;
 }
 
 table {
     font-family: Garamond, serif;
+    font-weight: bold;
     border-collapse: collapse;
     width: 500px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 table {
@@ -54,4 +58,31 @@ tr {
 
 tr:nth-child(even) {
     background-color: lavender;
+}
+
+th,td {
+    border: 1px solid plum;
+    text-align: left;
+    padding: 8px;
+}
+
+a:link {
+    color: black;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: rgb(144, 129, 147);
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color: rgb(94, 26, 98);
+    background-color: transparent;
+    text-decoration: none;
+}
+a:active {
+    color: black(27, 27, 4);
+    background-color: transparent;
+    text-decoration: none;
 }
