@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>HW3-BeyzaErdagi</title>
+
+  <style> 
+    body { max-width: 440px; background-color: rgba(22, 21, 21, 0.948);}
+    button {
+        border: none;
+        color: rgb(82, 75, 82);
+        padding: 5px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+    <button type="button" id="start">Start</button>
+    <button type="button" id="pause">Pause</button>
+    <button type="button" id="stop">Stop</button>
+    <button type="button" id="next">Next</button>
+    <button type="button" id="prev">Prev</button>
+    <canvas></canvas>
+
+<script>
+    let move = 0;
+
+    const fetchImage = async url => {
+        const response = await fetch(url)
+        const blob = await response.blob()
+        return blob
+    }
+
+    const img = document.getElementById("img");
+
+    function start() {
+        for (move = 1; move < 13; move++) {
+            console.log("https://github.com/beyzanurerdagi/advanced-programming/blob/main/HW3/spriteSheets/Capture" + move.toString() + ".PNG");
+            fetchImage("https://github.com/beyzanurerdagi/advanced-programming/blob/main/HW3/spriteSheets/Capture" + move.toString() + ".PNG").then(blob => {
+                const imageBlob = blob;
+                const imageBase64 = URL.createObjectURL(imageBlob);
+                img.src = imageBase64;
+                console.log(move + " : " + imageBase64);
+            });
+        }
+    }
+    start();
+    /*
+    function pause() {
+        
+    }
+
+    const startButton = document.getElementById("start");
+    startButton.addEventListener("click", () => {
+        start();
+    })
+
+    const pauseButton = document.getElementById("pause");
+    pauseButton.addEventListener("click", () => {
+        pause();
+    })
+
+    const stopButton = document.getElementById("stop");
+    stopButton.addEventListener("click", () => {
+    })
+
+    const nextButton = document.getElementById("next");
+    nextButton.addEventListener("click", () => {
+        
+    })
+
+    const prevButton = document.getElementById("prev");
+    prevButton.addEventListener("click", () => {
+        
+    })*/
+    
+</script>
+</body>
+</html>

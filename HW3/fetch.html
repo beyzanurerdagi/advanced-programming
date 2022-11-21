@@ -3,28 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <link rel="icon" href="/305/images/icon192.png">
-    <title>CW6-BeyzaErdagi</title>
+    <title>HW3-BeyzaErdagi</title>
 
   <style> 
-    body { max-width: 440px; }
-    #url { width: 190px; }
-    span, #url { color: blue; }
+    body { max-width: 440px; background-color: rgba(22, 21, 21, 0.948);}
+    button {
+        border: none;
+        color: rgb(82, 75, 82);
+        padding: 5px 15px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
   </style>
 </head>
 
-<body>   
+<body>
+    <button type="button" id="start">Start</button>
+    <button type="button" id="pause">Pause</button>
+    <button type="button" id="stop">Stop</button>
+    <button type="button" id="next">Next</button>
+    <button type="button" id="prev">Prev</button>
+    <canvas></canvas>
+
 <script>
-const imageURL = "";
-function init(){
-    
-    
-} 
-init()
-title.innerText = document.title;
-sample.innerText = init+'\n';
+    let move = 1;
+    var clickedButton = false;
+    var runTime = true;
+    var canvas = document.querySelector('canvas');
+    var c = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    var images = [];
+    images.length = 13;
+
+    for(let j=1;j<images.length;j++){
+
+        images[j] = new Image();
+        images[j].src = 'spriteSheets/Capture' + j.toString() + '.PNG';
+    }
+
+    function start(){
+        let i = 1;
+        setInterval(function(){
+            if(runTime){
+                i++;
+                if(i>= 13){
+                    i = 1;
+                }
+                c.drawImage(images[i],100,100,100,100);
+                move = i;
+            }
+        },100)
+    }
+
+    function pause() {
+        let i = move;
+        setInterval(function(){
+            if(runTime){
+                i++;
+                if(i>= 13){
+                    i = 1;
+                }
+                c.drawImage(images[i],100,100,100,100);
+                move = i;
+            }
+        },100)
+    }
+
+    const startButton = document.getElementById("start");
+    startButton.addEventListener("click", () => {
+        runTime = true;
+        start();
+    })
+
+    const pauseButton = document.getElementById("pause");
+    pauseButton.addEventListener("click", () => {
+        runTime = !runTime;
+        clickedButton = true;
+        pause();
+    })
+
+    const stopButton = document.getElementById("stop");
+    stopButton.addEventListener("click", () => {
+        clickedButton = true;
+        runTime = false;
+    })
+
+    const nextButton = document.getElementById("next");
+    nextButton.addEventListener("click", () => {
+        if(clickedButton){
+            move++;
+            if(move >= 13) {
+                move = 1;
+            }
+            c.drawImage(images[move],100,100,100,100);
+        }
+    })
+
+    const prevButton = document.getElementById("prev");
+    prevButton.addEventListener("click", () => {
+        if(clickedButton){
+            move--;
+            if(move <= 0) {
+                move = 12;
+            }
+            c.drawImage(images[move],100,100,100,100);
+        }
+    })
     
 </script>
-
 </body>
 </html>
