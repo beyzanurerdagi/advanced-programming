@@ -17,18 +17,27 @@
         margin: 4px 2px;
         cursor: pointer;
         border-radius: 8px;
+        user-select: none;
+    }
+    #box {
+        font-size: 180px;
+        background-color: hsl(0, 0%, 90%);
+        width: 300px;
+        height: 240px;
+        position: relative;
     }
   </style>
 </head>
 
 <body>
+    <div id=box>
+        <img src="https://beyzanurerdagi.github.io/advanced-programming/HW3/spriteSheets/Capture1.PNG" id="img">
+    </div>
     <button type="button" id="start">Start</button>
     <button type="button" id="pause">Pause</button>
     <button type="button" id="stop">Stop</button>
     <button type="button" id="next">Next</button>
     <button type="button" id="prev">Prev</button>
-    <img src="https://beyzanurerdagi.github.io/advanced-programming/HW3/spriteSheets/Capture1.PNG" id="img">
-
 <script>
     let move = 0;
     var clickedButton = false;
