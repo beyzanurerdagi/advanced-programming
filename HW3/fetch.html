@@ -42,6 +42,7 @@
     let move = 0;
     var clickedButton = false;
     var runTime = true;
+    let id;
 
     const fetchImage = async url => {
         const response = await fetch(url)
@@ -53,41 +54,44 @@
 
     function start() {
         let i = 0;
-        setInterval(function(){
-            if(runTime){
-                i++;
-                if(i>=13){
-                    i = 1;
+        if(!id){
+            id = setInterval(function(){
+                if(runTime){
+                    i++;
+                    if(i>=13){
+                        i = 1;
+                    }
+                    console.log("https://beyzanurerdagi.github.io/advanced-programming/HW3/spriteSheets/Capture" + i.toString() + ".PNG");
+                    fetchImage("https://beyzanurerdagi.github.io/advanced-programming/HW3/spriteSheets/Capture" + i.toString() + ".PNG").then(blob => {
+                    const imageBlob = blob;
+                    const imageBase64 = URL.createObjectURL(imageBlob);
+                    img.src = imageBase64;
+                    });
+                    move = i;
                 }
-                console.log("https://beyzanurerdagi.github.io/advanced-programming/HW3/spriteSheets/Capture" + i.toString() + ".PNG");
-                fetchImage("https://beyzanurerdagi.github.io/advanced-programming/HW3/spriteSheets/Capture" + i.toString() + ".PNG").then(blob => {
-                const imageBlob = blob;
-                const imageBase64 = URL.createObjectURL(imageBlob);
-                img.src = imageBase64;
-                });
-                move = i;
-            }
-        },100)
+            },100)
+        }
     }
 
     function pause() {
         let i = move;
-        setInterval(function(){
-            if(runTime){
-                i++;
-                if(i>= 13){
-                    i = 1;
+        if(!id){
+            id = setInterval(function(){
+                if(runTime){
+                    i++;
+                    if(i>= 13){
+                        i = 1;
+                    }
+                    console.log("https://beyzanurerdagi.github.io/advanced-programming/HW3/spriteSheets/Capture" + i.toString() + ".PNG");
+                    fetchImage("https://beyzanurerdagi.github.io/advanced-programming/HW3/spriteSheets/Capture" + i.toString() + ".PNG").then(blob => {
+                    const imageBlob = blob;
+                    const imageBase64 = URL.createObjectURL(imageBlob);
+                    img.src = imageBase64;
+                });
+                move = i;
                 }
-                console.log("https://beyzanurerdagi.github.io/advanced-programming/HW3/spriteSheets/Capture" + i.toString() + ".PNG");
-                fetchImage("https://beyzanurerdagi.github.io/advanced-programming/HW3/spriteSheets/Capture" + i.toString() + ".PNG").then(blob => {
-                const imageBlob = blob;
-                const imageBase64 = URL.createObjectURL(imageBlob);
-                img.src = imageBase64;
-            });
-            move = i;
-            }
-        },100)
-        
+            },100)
+        }
     }
     
     const startButton = document.getElementById("start");
