@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>GitHub Users</title>
+  <style>
+    body {
+        max-width: 500px;
+    }
+    img {
+        padding-right: 24px; 
+        padding-bottom: 24px;
+        width: 256px;
+        float: center;
+    }
+    pre { overflow-x: auto; }
+    #out { color: black; font-weight: 500}
+  </style>
+</head>
+
+<body>
+
+<h2 id=title></h2>
+<input type=text id=usr value=beyzanurerdagi onChange="readUser()">
+<p id=out>Reading data</p>
+<hr />
+<b>Sample code</b>
+<pre id=sample></pre>
+<hr />
+<script>
+"use strict";
+function error(e) {
+    out.innerText = e
+    out.style.color = 'red'
+    console.error(e)
+}
+function cause(s) {
+  switch (s) {
+    case 403:
+      return 'Rate limit exceeded'
+    case 404:
+      return usr.value+' not found'
+    default:
+      return 'Status '+s
+  }
+}
+async function toJSON(url) {
+  try {
+    let r = await fetch(url)
+    if (!r.ok) throw cause(r.status)
+    return r.json()
+  } catch (e) {
+    error(e)
+  }
+}
+async function readUser() {
+    const URL = "https://api.github.com/users/"
+    const BR = '<BR>'
+    let u = await toJSON(URL+usr.value)
+    if (!u || !u.login) return
+    out.style.color = ''
+    out.innerHTML = `<img src="${u.avatar_url} width="70" height="200">`
+    let name = (u.name || u.login)
+    let name_value= u.name
+    out.innerHTML += BR+name_value.bold()+BR
+    let username = u.login
+    out.innerHTML += username+BR 
+    let location;
+    if (u.location) location = u.location
+    out.innerHTML +=BR+location+BR; 
+    let company = u.company
+    out.innerHTML += company+BR
+    let githubIo;
+    githubIo = document.createElement("a")
+    githubIo.href = u.blog
+    githubIo.target = "NewTab"
+    githubIo.innerText = u.blog
+    console.log(u.blog)
+    out.appendChild(githubIo)
+
+}
+    title.innerText = document.title
+    out.innerText = document.title
+    sample.innerText = toJSON +'\n'+ readUser
+    readUser()
+</script>
+
+</body>
+</html>
