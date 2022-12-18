@@ -334,7 +334,7 @@ body {
 
 @media only screen 
 and (min-device-width : 320px) 
-and (max-device-width : 480px) {
+and (max-device-width : 480px){
 
     #home {
         bottom: -300px;
@@ -369,6 +369,7 @@ and (max-device-width : 480px) {
         padding: 18px;
         width: 50px;
     }
+    
     .l{
         margin: 15px;
         height: 75px;
@@ -379,6 +380,7 @@ and (max-device-width : 480px) {
         height: 10px;
         font-size: 60px;
     }
+   
     .playerModel .head {
         height: 125px;
         width: 125px;
@@ -467,6 +469,15 @@ and (max-device-width : 480px) {
 
     #result {
         bottom: -300px;
+    }
+}
+
+@media only screen 
+and (min-device-height: 600px) {
+
+    #keyboard{
+        position: absolute;
+        bottom: -250px;
     }
 }
 

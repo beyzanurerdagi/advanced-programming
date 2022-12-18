@@ -10,7 +10,7 @@ if("serviceWorker" in navigator){
 }
 
 // Word array
-var word = ["hangman", "HTML", "code", "CSS", "javascript", "animation","repository","async programming"];
+var word = ["hangman", "HTML", "code", "CSS", "javascript", "animation","repository","api"];
 
 // Game keyboard
 var keyboard = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
