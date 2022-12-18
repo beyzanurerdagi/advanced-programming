@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hangman</title>
+        <link rel="stylesheet" type="text/css" href="src/style.css">
+        <meta name="theme-color" content="#eee">
+        <link rel="manifest" href="manifest.json">
+        <link rel="apple-touch-icon" href="images/logo.png">
+    </head>
+    <body>
+        <div id="home">
+            <div class="title">Hangman</div>
+            <div class="button anim" onclick="startGame()">Play</div>
+        </div>
+        <div id="result" class="h">
+            <div class="title" id="rT"></div>
+            <div class="body" id="rM"></div>
+            <div class="button anim" onclick="startGame()">Try Again?</div>
+        </div>
+        <div id="pGame">
+            <div id="letter"></div>
+            <div id="game">
+                <div class="player">
+                    <div class="playerModel">
+                        <div class="head" data="false" id="g4"></div>
+                        <div class="body" data="false" l="false" r="false" id="g5"></div>
+                        <div class="foot" data="false" l="false" r="false" id="g6"></div>
+                    </div>
+                </div>
+                <div class="stick3" data="false" id="g3"></div>
+                <div class="stick2" data="false" id="g2"></div>
+                <div class="stick" data="false" id="g1"></div>
+                <div class="ground" data="false" id="g0"></div>
+            </div>
+            <div id="tastatur">
+                <div id="moveKeyboard"><div class="marg"></div></div>
+                <div id="keyboard"></div>
+            </div>
+        </div>
+        <script src="src/app.js"></script>
+    </body>
+</html>

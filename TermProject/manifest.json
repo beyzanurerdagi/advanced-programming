@@ -1,0 +1,20 @@
+{
+    "name": "Hangman Game",
+    "short_name": "Hangman",
+    "start_url": "/TermProject/", 
+    "background_color": "#eee",
+    "theme_color": "#eee",
+    "display": "standalone",
+    "icons": [
+        {
+            "src": "images/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "images/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

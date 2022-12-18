@@ -1,0 +1,506 @@
+
+body {
+    background-color: #eee;
+    margin: 0;
+}
+
+#home {
+    background: linear-gradient(#eee, #aaa);
+    background: -webkit-linear-gradient(top, #eee, #aaa);
+    background: -ms-linear-gradient(top, #eee, #aaa);
+    background: -moz-linear-gradient(top, #eee, #aaa);
+    background: -o-linear-gradient(top, #eee, #aaa);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 99;
+}
+
+#home .title {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 15%;
+    text-align: center;
+}
+
+#home .button {
+    background: #afa;
+    border-radius: 2px;
+    box-shadow: 0 0 0 5px #090;
+    display: table;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 36px;
+    margin: 20% auto;
+}
+
+#home .foother {
+    bottom: 20px;
+    font-size: 12px;
+    font-style: italic;
+    position: absolute;
+    right: 20px;
+}
+
+.h {
+    display: none;
+}
+
+#result {
+    background: #700;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 100;
+}
+
+#result[data="true"] {
+    background: #070;
+}
+
+#result .title {
+    color: #eee;
+    font-size: 48px;
+    margin-top: 15%;
+    text-align: center;
+    text-shadow: 1px 1px 0 #000;
+}
+
+#result .body {
+    color: #fff;
+    margin-top: 30px;
+    text-align: center;
+    text-shadow: 1px 1px 0 #000;
+}
+
+#result .button {
+    background:#afa;
+    border-radius: 2px;
+    box-shadow: 0 0 0 5px #090;
+    display: table;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 40px auto;
+    margin-bottom: 0;
+}
+
+#letter {
+    font-size: 22px;
+    height: 30px;
+    margin: 20px;
+    text-align: center;
+}
+
+.l {
+    box-shadow: 0 3px 0 -1px #555;
+    display: inline-block;
+    position: -webkit-sticky;
+    margin: 1px;
+    height: 20px;
+    text-transform: uppercase;
+    width: 20px;
+}
+
+.ls {
+    box-shadow: 0 0 0 0 #555;
+    width: 10px;
+}
+
+#game {
+    height: 250px;
+    margin: auto;
+    position: relative;
+    width: 220px;
+}
+
+#game .player {
+    left: 53px;
+    position: absolute;
+    top: 90px;
+    height: 130px;
+    width: 75px;
+}
+
+.player .playerModel {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.playerModel .head {
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #000 inset;
+    height: 35px;
+    margin: auto;
+    width: 35px;
+}
+
+.playerModel .head[data="false"] {
+    display: none;
+}
+
+.playerModel .body {
+    background-color: #000;
+    height: 45px;
+    margin: auto;
+    width: 2px;
+}
+
+.playerModel .body[data="false"] {
+    display: none;
+}
+
+.playerModel .body:before, .playerModel .body:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 30px;
+    position: absolute;
+    width: 2px;
+}
+
+.playerModel .body[l="false"]:before, .playerModel .body[r="false"]:after {
+    display: none;
+}
+
+.playerModel .body:before {
+    left: 27px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.playerModel .body:after {
+    right: 26px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.playerModel .foot {
+    background-color: #000;
+    height: 3px;
+    margin: auto;
+    width: 2px;
+}
+
+.playerModel .foot[data="false"] {
+    display: none;
+}
+
+.playerModel .foot:before, .playerModel .foot:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 40px;
+    position: absolute;
+    width: 2px;
+}
+
+.playerModel .foot[l="false"]:before, .playerModel .foot[r="false"]:after {
+    display: none;
+}
+
+.playerModel .foot:before {
+    left: 30px;
+    transform: rotate(20deg);
+    -webkit-transform: rotate(20deg);
+}
+
+.playerModel .foot:after {
+    right: 29px;
+    transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+}
+
+#game .stick3 {
+    background-color: #000;
+    height: 20px;
+    left: 90px;
+    position: absolute;
+    top: 70px;
+    width: 2px;
+}
+
+#game .stick3[data="false"] {
+    display: none;
+}
+
+#game .stick2 {
+    background-color: #000;
+    border-radius: 5px 0 0 5px;
+    bottom: 180px;
+    height: 5px;
+    position: absolute;
+    right: 45px;
+    width: 95px;
+}
+
+#game .stick2:before {
+    background-color: #000;
+    content: "";
+    left: 50px;
+    height: 5px;
+    position: absolute;
+    top: 17px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    width: 50px;
+}
+
+#game .stick2[data="false"] {
+    display: none;
+}
+
+#game .stick {
+    background-color: #000;
+    bottom: 0;
+    height: 180px;
+    margin: auto;
+    position: absolute;
+    right: 45px;
+    width: 5px;
+}
+
+#game .stick[data="false"] {
+    display: none;
+}
+
+#game .ground {
+    background-color: #000;
+    border-radius: 5px;
+    bottom: 0;
+    left: 0;
+    height: 5px;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    width: 220px;
+}
+
+#game .ground[data="false"] {
+    display: none;
+}
+
+#tastatur {
+    background-color: rgba(238, 238, 238, 0.9);
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    margin-bottom: 20px;
+    max-width: 500px;
+    padding: 0 15px;
+    position: center;
+    right: 0;
+    text-align: center;
+}
+
+#moveKeyboard {
+    padding: 15px;
+}
+
+.marg {
+    border-bottom: solid 2px #ccc;
+}
+
+.b {
+    background: #eee;
+    background: -webkit-linear-gradient(top, #fff, #eee);
+    background: -o-linear-gradient(top, #fff, #eee);
+    box-shadow: 1px 1px 1px 0 #ccc;
+    display: inline-block;
+    margin: 2px;
+    padding: 8px;
+    text-align: center;
+    width: 25px;
+}
+
+.b[data="false"], .b[data="true"] {
+    color: #555;
+    font-weight: bold;
+}
+
+.b[data="true"] {
+    background: #9f9;
+}
+
+.b[data="false"] {
+    background: #aaa;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+
+    #home {
+        bottom: -300px;
+    }
+
+    #home .title {
+        font-size: 100px;
+        margin-top: 70%;
+    }
+    
+    #home .button {
+        padding: 50px 80px;
+        font-size: 48px;
+        margin: 30% auto;
+    }
+
+    #keyboard{
+        position: absolute;
+        bottom: 70px;
+        font-size: 48px;
+        padding: 600px 60px;
+        right: 40px;
+    }
+
+    #moveKeyboard {
+        padding: 15px;
+
+    }
+
+    .b {
+        margin: 5px;
+        padding: 18px;
+        width: 50px;
+    }
+    .l{
+        margin: 15px;
+        height: 75px;
+        width: 60px;
+        top: -50px;
+    }
+    #letter {
+        height: 10px;
+        font-size: 60px;
+    }
+    .playerModel .head {
+        height: 125px;
+        width: 125px;
+        position: absolute;
+        top: 360px;
+        right: 42px;
+    }
+    .playerModel .body {
+        height: 150px;
+        width: 2px;
+        position: absolute;
+        top: 485px;
+        right: 100px;
+    }
+    .playerModel .foot:before {
+        left: -42px;
+        position: absolute;
+        height: 80px;
+        top: 630px;
+    }
+    .playerModel .foot:after {
+        right: 42px;
+        position: absolute;
+        height: 80px;
+        top: 630px;
+    }
+    .playerModel .body:before {
+        left: 30px;
+        position: absolute;
+        top: 15px;
+        height: 80px;
+        -webkit-transform: rotate(-45deg);
+    }
+    .playerModel .body:after {
+        position: absolute;
+        top: 15px;
+        right: 30px;
+        height: 80px;
+        -webkit-transform: rotate(45deg);
+    }
+    #game .stick2:before {
+        left: 70px;
+        height: 5px;
+        top: 30px;
+        width: 90px;
+    }
+
+    #game .stick2 {
+        bottom: 400px;
+        width: 150px;
+    }
+    #game .stick {
+        height: 400px;
+    }
+    #game .stick3 {
+        top: 400px;
+        left: 25px;
+        right: 60px;
+        height: 50px;
+    }
+    #game {
+        height: 800px;
+    }
+
+    #game .ground {
+        left: -155px;
+        bottom: -5px;
+        width: 300px;
+    }
+
+    #result .title {
+        font-size: 100px;
+        margin-top: 50%;
+    }
+    
+    #result .body {
+        font-size: 75px;
+        margin-top: 50px;
+    }
+
+    #result .button {
+        margin-top: 100px;
+        padding: 50px 80px;
+        font-size: 48px;
+    }
+
+    #result {
+        bottom: -300px;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+/* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+/* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+/* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+/* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+/* Styles */
+}
