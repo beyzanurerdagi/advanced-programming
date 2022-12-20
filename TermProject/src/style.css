@@ -353,7 +353,7 @@ and (max-device-width : 480px){
 
     #keyboard{
         position: absolute;
-        bottom: 70px;
+        bottom: -450px;
         font-size: 48px;
         padding: 600px 60px;
         right: 40px;
@@ -471,12 +471,12 @@ and (max-device-width : 480px){
         bottom: -300px;
     }
 }
-
+/*
 @media only screen 
 and (min-device-height: 600px) {
 
     #keyboard{
         position: absolute;
-        bottom: -250px;
+        bottom: -300px;
     }
-}
+}*/
