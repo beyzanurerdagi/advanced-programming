@@ -122,13 +122,22 @@ class Graph extends Menu {
     return this.context.getImageData(x, y, 1, 1).data;
   }
     
-   flipHorizontal(){
-    cx.translate(img.width,0);
-    cx.scale(-1,1);
-    cx.drawImage(img,0,0);
-    document.querySelector('canvas');
-
-    const card = document.querySelector('canvas');
+  flipHorizontal() {
+    var imgWidth = img.width;
+    var imgHeight = img.height;
+    var imgData = this.context.getImageData(0, 0, imgWidth, imgHeight);
+    for (let i = 0; i < imgData.height; i++) {
+      for (let j = 0; j < imgData.width / 2; j++) {
+            var index = ((i * imgData.width) + j) * 4;
+            var mirrorIndex = (((i + 1) * imgData.width) - (j + 1)) * 4;
+            for (let k = 0; k < 4; k++) {
+              var temp = imgData.data[index + k];
+              imgData.data[index + k] = imgData.data[mirrorIndex + k];
+              imgData.data[mirrorIndex + k] = temp;
+            }
+      }
+    }
+    this.context.putImageData(imgData, 0, 0, 0, 0, imgData.width, imgData.height);
   }
 }
 
