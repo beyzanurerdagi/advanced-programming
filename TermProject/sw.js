@@ -1,5 +1,5 @@
 const cacheName = 'cache-v1';
-const precacheResources = ['/TermProject/', '/TermProject/index.html', '/TermProject/src/style.css', '/TermProject/src/app.js','/TermProject/images/logo.png'];
+const precacheResources = ['/TermProject/','/TermProject/src/style.css', '/TermProject/images/logo.png'];
 
 self.addEventListener("install", e => {
     e.waitUntil(

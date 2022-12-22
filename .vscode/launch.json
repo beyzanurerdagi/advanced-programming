@@ -5,6 +5,12 @@
             "name": "http://127.0.0.1:5500/TermProject/index.html",
             "request": "launch",
             "url": "http://127.0.0.1:5500/TermProject/index.html"
+        },
+        {
+            "type": "chrome",
+            "name": "https://beyzanurerdagi.github.io/advanced-programming/TermProject/index.html",
+            "request": "launch",
+            "url": "https://beyzanurerdagi.github.io/advanced-programming/TermProject/index.html"
         }
     ]
 }
