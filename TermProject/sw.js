@@ -1,10 +1,10 @@
 const cacheName = 'cache-v1';
-const precacheResources = ['/TermProject/','/TermProject/src/style.css', '/TermProject/images/logo.png'];
+//const precacheResources = ['/TermProject/','/TermProject/src/style.css', '/TermProject/images/logo.png'];
 
 self.addEventListener("install", e => {
     e.waitUntil(
         caches.open(cacheName).then(cache => {
-            return cache.addAll(precacheResources);
+            return cache.addAll(["./", "./src/style.css","./images/logo.png"]);
         })
     );
 });

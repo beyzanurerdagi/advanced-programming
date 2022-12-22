@@ -1,7 +1,7 @@
 {
     "name": "Hangman Game",
     "short_name": "Hangman",
-    "start_url": "/TermProject/", 
+    "start_url": ".", 
     "background_color": "#eee",
     "theme_color": "#eee",
     "display": "standalone",
