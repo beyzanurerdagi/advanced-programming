@@ -7,6 +7,10 @@ body{
     margin-left: 8px;
 }
 
+#image {
+    margin-left: 650px;
+}
+
 div {
     display: block;
 }
