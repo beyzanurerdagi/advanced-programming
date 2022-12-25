@@ -210,6 +210,17 @@ function gameEnd(e) {
     d.className = ""
 }
 
+// Show hint
+function hint() {
+    gId("hintText").innerText = word[select][1]
+    gId("hint").style.display = "block"
+}
+
+// Exit hint
+function hintExit() {
+    gId("hint").style.display = "none"
+}
+
 // Get HTML ID element by name
 function gId(a) {
     return document.getElementById(a)

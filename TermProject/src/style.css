@@ -284,6 +284,26 @@ body {
     display: none;
 }
 
+#game .hintButton {
+    background: #ccc;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.1));
+    background: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));
+    background: -ms-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));
+    background: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));
+    background: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.1));
+    border-radius: 8%;
+    box-shadow: 1px 1px 3px #999;
+    font-weight: bold;
+    padding: 5px 10px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+#game .hintButton[data="false"] {
+    display: none;
+}
+
 #tastatur {
     background-color: rgba(238, 238, 238, 0.9);
     bottom: 0;
@@ -304,7 +324,49 @@ body {
 .marg {
     border-bottom: solid 2px #ccc;
 }
+#hint {
+    border-radius: 2px;
+    box-shadow: 1px 1px 4px #888;
+    display: none;
+    left: 0;
+    margin: auto;
+    margin-top: 75px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 250px;
+}
 
+#hint .title {
+    background: #fff;
+    background: linear-gradient(#fff, #bbb);
+    background: -webkit-linear-gradient(top, #fff, #bbb);
+    background: -ms-linear-gradient(top, #fff, #bbb);
+    background: -moz-linear-gradient(top, #fff, #bbb);
+    background: -o-linear-gradient(top, #fff, #bbb);
+    border-bottom: solid 1px #555;
+    border-radius: 2px 2px 0 0;
+    font-weight: bold;
+    padding: 5px 10px;
+    position: relative;
+}
+
+#hint .title .exit {
+    background-color: #f55;
+    border-radius: 50%;
+    box-shadow: 1px 1px 4px #888;
+    font-weight: bold;
+    padding: 8px 12px;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+}
+
+#hint .body {
+    background-color: #ddd;
+    border-radius: 0 0 2px 2px;
+    padding: 10px;
+}
 .b {
     background: #eee;
     background: -webkit-linear-gradient(top, #fff, #eee);
