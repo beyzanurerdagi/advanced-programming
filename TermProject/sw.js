@@ -4,7 +4,7 @@ const cacheName = 'cache-v1';
 self.addEventListener("install", e => {
     e.waitUntil(
         caches.open(cacheName).then(cache => {
-            return cache.addAll(["./", "./src/style.css","./images/logo.png"]);
+            return cache.addAll(["./", "./src/style.css","./images/logo192.png"]);
         })
     );
 });
