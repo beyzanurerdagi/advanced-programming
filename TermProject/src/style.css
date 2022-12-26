@@ -532,13 +532,25 @@ and (max-device-width : 480px){
     #result {
         bottom: -300px;
     }
-}
-/*
-@media only screen 
-and (min-device-height: 600px) {
 
-    #keyboard{
-        position: absolute;
-        bottom: -300px;
+    #game .hintButton {
+        padding: 10px 20px;
+        right: -70px;
+        top: 200px;
+        font-size: 40px;
     }
-}*/
+
+    #hint {
+        margin-top: 250px;
+        right: -10px;
+        left: 50px;
+    }
+    
+    #hint .title {
+        font-size: 35px;
+    }
+    
+    #hint .body {
+        font-size: 25px;
+    }
+}

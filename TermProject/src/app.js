@@ -10,8 +10,9 @@ if("serviceWorker" in navigator){
 }
 
 // Word array
-var word = ["hangman", "HTML", "code", "CSS", "javascript", "animation","repository","api"];
-
+var word = ["hangman", "HTML", "algorithm", "CSS", "javascript", "Syntax","application","api"];
+var hints = ["Game Name", "Standard Markup Language", "Used to Solve Problems", "Style an HTML Document", "Programming Language of the Web","Rules That Dictate the Structure of a Language","Software Program that Runs On Your Computer","Application Programming Interface"]
+var idx = 0
 // Game keyboard
 var keyboard = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -74,13 +75,16 @@ function clearPlayer() {
     gId("g6").setAttribute("data", "false")
     gId("g6").setAttribute("l", "false")
     gId("g6").setAttribute("r", "false")
+    gId("hintButton").setAttribute("data", "false")
+    gId("hint").style.display = "none"
 }
 
 // Get new word
 function createWord() {
     var d = gId("letter");
     d.innerHTML = "";
-    select = word[Math.floor(Math.random() * word.length)];
+    idx = Math.floor(Math.random() * word.length)
+    select = word[idx];
     for(i = 0;i<select.length;i++){
         var tmp = select[i].toUpperCase();
         var x = document.createElement("span");
@@ -95,6 +99,7 @@ function createWord() {
             }
         }
     }
+    gId("hintButton").setAttribute("data", "true")
 }
 
 // Create keyboard
@@ -212,7 +217,7 @@ function gameEnd(e) {
 
 // Show hint
 function hint() {
-    gId("hintText").innerText = word[select][1]
+    gId("hintText").innerText = hints[idx]
     gId("hint").style.display = "block"
 }
 
